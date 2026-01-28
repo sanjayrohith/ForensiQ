@@ -18,45 +18,45 @@ import ParticlesBackground from "@/components/ParticlesBackground";
 const sections = [
   {
     id: "overview",
-    title: "Overview",
+    title: "Platform Overview",
     icon: BookOpen,
     description:
-      "ForensiQ helps investigators validate documents with explainable AI, metadata forensics, and tamper signals. The platform produces audit-ready reports designed for compliance workflows.",
+      "ForensiQ is an AI-assisted document forensics platform that helps human experts verify document authenticity. It provides explainable AI verdicts, forensic metadata analysis, and audit-ready reports while keeping humans in the decision loop.",
+  },
+  {
+    id: "human-ai-collaboration",
+    title: "Human-AI Collaboration",
+    icon: Sparkles,
+    description:
+      "ForensiQ augments human expertise rather than replacing it. AI provides evidence and analysis, while human experts make final authenticity determinations based on provided insights and their professional judgment.",
   },
   {
     id: "quick-start",
-    title: "Quick start",
-    icon: Sparkles,
-    description:
-      "Upload a PDF or image, run analysis, then export a shareable report. Each run generates a confidence score and highlights evidence behind the verdict.",
-  },
-  {
-    id: "upload-guidelines",
-    title: "Upload guidelines",
+    title: "Quick Start Guide",
     icon: ScanText,
     description:
-      "Supported formats: PDF, PNG, JPG. For best results, upload original files with intact metadata and avoid screenshots or converted copies.",
+      "Upload a document, review AI-generated evidence analysis, examine confidence scores, and make an informed decision. Export findings as an audit-ready report for documentation and compliance.",
   },
   {
     id: "analysis-pipeline",
-    title: "Analysis pipeline",
+    title: "Forensic Analysis",
     icon: FileSearch,
     description:
-      "We combine metadata checks, visual anomaly detection, and linguistic consistency to surface inconsistencies. Each signal is weighted for the final risk score.",
+      "The platform analyzes metadata timestamps, visual compression artifacts, linguistic patterns, and structural inconsistencies. Each analysis provides clear explanations and confidence levels to support human decision-making.",
   },
   {
     id: "interpret-results",
-    title: "Interpreting results",
+    title: "Understanding Results",
     icon: Wand2,
     description:
-      "Review evidence cards for the why behind the verdict. Pay attention to high-confidence failures and cross-reference flagged regions in the report.",
+      "Results include evidence cards explaining findings, confidence scores for each analysis type, visual indicators of suspicious regions, and recommended next steps for human reviewers.",
   },
   {
-    id: "security",
-    title: "Security & privacy",
+    id: "ethics-security",
+    title: "Ethics & Security",
     icon: Lock,
     description:
-      "Files are encrypted in transit. Evidence handling follows strict retention controls and can be configured for no-storage modes.",
+      "Built with privacy-first design, transparent AI decision-making, bias mitigation measures, and strict data retention controls. Documents can be processed without permanent storage for sensitive use cases.",
   },
 ];
 
@@ -92,11 +92,11 @@ const Documentation = () => (
             <span className="text-muted-foreground">Documentation</span>
           </div>
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-4">
-            Build trust with explainable forensics
+            AI-Assisted Document Forensics
           </h1>
           <p className="text-muted-foreground text-lg max-w-2xl">
-            Everything you need to integrate ForensiQ into investigative workflows, understand verdicts,
-            and produce evidence-grade reports.
+            Learn how ForensiQ assists human experts in verifying document authenticity through
+            explainable AI, forensic analysis, and audit-ready reporting.
           </p>
         </motion.div>
 
