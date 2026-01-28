@@ -73,7 +73,7 @@ const Landing = () => {
             Documentation
           </Link>
           <Link
-            to="/docs#api"
+            to="/api"
             className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium"
           >
             API
