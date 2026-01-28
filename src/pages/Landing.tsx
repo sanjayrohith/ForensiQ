@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
   Activity,
@@ -66,16 +66,25 @@ const Landing = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          <a href="#" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">
+          <Link
+            to="/docs"
+            className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium"
+          >
             Documentation
-          </a>
-          <a href="#" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">
+          </Link>
+          <Link
+            to="/docs#api"
+            className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium"
+          >
             API
-          </a>
-          <a href="#" className="flex items-center gap-2 px-4 py-2 rounded-lg glass-card text-sm font-medium text-foreground hover:bg-primary/10 transition-colors">
+          </Link>
+          <button
+            type="button"
+            className="flex items-center gap-2 px-4 py-2 rounded-lg glass-card text-sm font-medium text-foreground hover:bg-primary/10 transition-colors"
+          >
             Sign In
             <ChevronRight className="w-4 h-4" />
-          </a>
+          </button>
         </motion.nav>
       </header>
 
