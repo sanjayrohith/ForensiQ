@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import {
   BookOpen,
+  ArrowLeft,
   FileSearch,
   Lock,
   ScanText,
@@ -76,6 +78,15 @@ const Documentation = () => (
           transition={{ duration: 0.6 }}
           className="mb-10"
         >
+          <Link
+            to="/"
+            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-6"
+          >
+            <span className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+              <ArrowLeft className="w-4 h-4" />
+            </span>
+            Back to home
+          </Link>
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card text-sm mb-5">
             <Activity className="w-4 h-4 text-primary" />
             <span className="text-muted-foreground">Documentation</span>
