@@ -54,9 +54,78 @@ const Landing = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-lg ring-glow-primary">
-            <Fingerprint className="w-6 h-6 text-primary-foreground" />
-          </div>
+          <motion.div 
+            className="relative w-11 h-11 cursor-pointer group"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            {/* Outer rotating ring */}
+            <motion.div
+              className="absolute inset-0 rounded-xl bg-gradient-to-r from-primary/20 via-secondary/30 to-primary/20 border border-primary/30"
+              animate={{ rotate: 360 }}
+              transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+            />
+            
+            {/* Inner pulsing glow */}
+            <motion.div
+              className="absolute inset-1 rounded-lg bg-gradient-to-br from-primary to-secondary shadow-lg"
+              animate={{ 
+                boxShadow: [
+                  "0 0 20px hsl(var(--primary) / 0.3)",
+                  "0 0 30px hsl(var(--primary) / 0.6)",
+                  "0 0 20px hsl(var(--primary) / 0.3)"
+                ]
+              }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            >
+              {/* Hexagonal pattern overlay */}
+              <div className="absolute inset-0 rounded-lg opacity-20 bg-[radial-gradient(circle_at_center,_transparent_2px,_hsl(var(--primary-foreground))_2px,_hsl(var(--primary-foreground))_3px,_transparent_3px)] bg-[length:8px_8px]" />
+              
+              {/* Main icon */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <motion.div
+                  animate={{ rotateY: [0, 180, 360] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+                >
+                  <Fingerprint className="w-5 h-5 text-primary-foreground drop-shadow-lg" />
+                </motion.div>
+              </div>
+              
+              {/* Corner sparkles */}
+              <motion.div
+                className="absolute top-0.5 right-0.5 w-1 h-1 bg-white rounded-full"
+                animate={{ 
+                  opacity: [0, 1, 0],
+                  scale: [0.5, 1, 0.5]
+                }}
+                transition={{ duration: 1.5, repeat: Infinity, delay: 0.5 }}
+              />
+              <motion.div
+                className="absolute bottom-0.5 left-0.5 w-1 h-1 bg-white rounded-full"
+                animate={{ 
+                  opacity: [0, 1, 0],
+                  scale: [0.5, 1, 0.5]
+                }}
+                transition={{ duration: 1.5, repeat: Infinity, delay: 1 }}
+              />
+            </motion.div>
+            
+            {/* Data stream effect on hover */}
+            <motion.div
+              className="absolute -top-1 -left-1 w-2 h-2 bg-primary/60 rounded-full opacity-0 group-hover:opacity-100"
+              animate={{
+                x: [0, 50, 0],
+                y: [0, -10, 0],
+                opacity: [0, 0.8, 0]
+              }}
+              transition={{ 
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 0.2
+              }}
+            />
+          </motion.div>
           <span className="text-xl font-bold text-foreground tracking-tight">ForensiQ</span>
         </motion.div>
         
