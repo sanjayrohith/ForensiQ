@@ -168,7 +168,6 @@ const Landing = () => {
               className="mb-6"
             >
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card text-sm">
-                <Zap className="w-4 h-4 text-primary" />
                 <span className="text-muted-foreground">AI-Powered Document Forensics</span>
               </div>
             </motion.div>
